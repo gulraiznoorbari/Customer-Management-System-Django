@@ -1,1 +1,1 @@
-web:gunicorn CRMsystem.wsgi
+web: gunicorn CRMsystem.wsgi --log-file -
