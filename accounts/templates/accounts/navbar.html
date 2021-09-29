@@ -1,0 +1,50 @@
+{% load static %}
+
+<style>
+
+  .hello-msg {
+    font-size: 18px;
+    margin-right: 20px;
+    color: white;
+  }
+  .logout {
+    font-weight: bold;
+    color: white;
+  }
+  .logout:hover {
+    text-decoration: none;
+    color: whitesmoke;
+  }
+  .settings {
+    margin-left: 10px;
+    font-size: 18px;
+    color: white;
+  }
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="{% static './images/CMS.png' %}">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      {% if request.user.is_staff %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products' %}">Products</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="settings nav-link" href="{% url 'account' %}">Settings</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span class="hello-msg"><a class="logout" href="{% url 'logout' %}">Logout</a></span>
+
+</nav>
