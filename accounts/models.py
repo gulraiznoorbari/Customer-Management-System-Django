@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 class Customer(models.Model):
     user = models.OneToOneField(User, blank=True, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=200, null=True)
-    phone = models.CharField(max_length=200, null=True)
-    email = models.CharField(max_length=200, null=True)
+    phone = models.CharField(max_length=200, blank=True, null=True)
+    email = models.CharField(max_length=200, blank=True, null=True)
     profile_pic = models.ImageField(default="placeholder2.png", blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
