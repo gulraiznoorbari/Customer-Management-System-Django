@@ -1,6 +1,5 @@
 <div align="center">
 <h1>Customer Management System</h1>
-
 <!-- <img src=""> -->
 </div>
 
