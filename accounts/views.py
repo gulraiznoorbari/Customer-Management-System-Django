@@ -136,7 +136,7 @@ def updateOrder(request, primary_key):
         form = OrderForm(request.POST, instance=order)
         if form.is_valid():
             form.save()
-            return redirect("/")
+            return redirect('/customer/' + str(order.customer.id))
 
     context = {"form": form}
     return render(request, "accounts/order_form.html", context)
