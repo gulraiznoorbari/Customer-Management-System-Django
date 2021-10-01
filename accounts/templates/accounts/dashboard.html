@@ -22,8 +22,8 @@
                 {% for customer in customers %}
                     <tr>
                         <td><a class="btn btn-primary btn-sm" href="{% url 'customer' customer.id %}">View</a></td>
-                        <td>{{customer.name}}</td>
-                        <td>{{customer.orders}}</td>
+                        <td>{{ customer.name }}</td>
+                        <td>{{ customer.orders }}</td>
                     </tr>
                 {% endfor %}
             </table>
